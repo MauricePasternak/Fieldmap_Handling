@@ -1,0 +1,340 @@
+# Dicom-File-Format
+
+# Dicom-Meta-Information-Header
+# Used TransferSyntax: 
+(0002,0000) UL 196                                                # 4,1 File Meta Information Group Length
+(0002,0001) OB 00\01                                              # 2,1 File Meta Information Version
+(0002,0002) UI [1.2.840.10008.5.1.4.1.1.4]                        # 26,1 Media Storage SOP Class UID
+(0002,0003) UI [2.25.120708290178889289006936824689707870104]         # 44,1 Media Storage SOP Instance UID
+(0002,0010) UI [1.2.840.10008.1.2.1]                              # 20,1 Transfer Syntax UID
+(0002,0012) UI [1.2.40.0.13.1.1]                                  # 16,1 Implementation Class UID
+(0002,0013) SH [dcm4che-2.0 ]                                     # 12,1 Implementation Version Name
+(0002,0016) AE [NRG C-STORE SCU ]                                 # 16,1 Source Application Entity Title
+
+# Dicom-Data-Set
+# Used TransferSyntax: 1.2.840.10008.1.2.1
+(0008,0005) CS [ISO_IR 100]                                       # 10,1-n Specific Character Set
+(0008,0008) CS [ORIGINAL\PRIMARY\OTHER]                           # 22,2-n Image Type
+(0008,0016) UI [1.2.840.10008.5.1.4.1.1.4]                        # 26,1 SOP Class UID
+(0008,0018) UI [2.25.120708290178889289006936824689707870104]         # 44,1 SOP Instance UID
+(0008,0020) DA [20121112]                                         # 8,1 Study Date
+(0008,0021) DA [20121112]                                         # 8,1 Series Date
+(0008,0022) DA [20121112]                                         # 8,1 Acquisition Date
+(0008,0023) DA [20121112]                                         # 8,1 Content Date
+(0008,0030) TM [125828]                                           # 6,1 Study Time
+(0008,0031) TM [132310]                                           # 6,1 Series Time
+(0008,0032) TM [132310]                                           # 6,1 Acquisition Time
+(0008,0033) TM [132310]                                           # 6,1 Content Time
+(0008,0060) CS [MR]                                               # 2,1 Modality
+(0008,0070) LO [GE MEDICAL SYSTEMS]                               # 18,1 Manufacturer
+(0008,1030) LO [FOO_CV]                                         # 8,1 Study Description
+(0008,103e) LO [FOO_fieldmap]                                   # 14,1 Series Description
+(0008,1090) LO [DISCOVERY MR750 ]                                 # 16,1 Manufacturer's Model Name
+(0008,1111) SQ (Sequence with undefined length)                   # u/l,1 Referenced Performed Procedure Step Sequence
+  (fffe,e000) na (Item with undefined length)
+    (0008,1150) UI [1.2.840.10008.3.1.2.3.3]                      # 24,1 Referenced SOP Class UID
+    (0008,1155) UI [1.2.840.113619.6.283.4.1917728652.8046.1352742777.121]         # 54,1 Referenced SOP Instance UID
+  (fffe,e00d)
+(fffe,e0dd)
+(0008,1140) SQ (Sequence with undefined length)                   # u/l,1 Referenced Image Sequence
+  (fffe,e000) na (Item with undefined length)
+    (0008,1150) UI [1.2.840.10008.5.1.4.1.1.4]                    # 26,1 Referenced SOP Class UID
+    (0008,1155) UI [1.2.840.113619.2.283.6945.2378688.16234.1352729039.617]         # 54,1 Referenced SOP Instance UID
+  (fffe,e00d)
+  (fffe,e000) na (Item with undefined length)
+    (0008,1150) UI [1.2.840.10008.5.1.4.1.1.4]                    # 26,1 Referenced SOP Class UID
+    (0008,1155) UI [1.2.840.113619.2.283.6945.2378688.16234.1352729039.622]         # 54,1 Referenced SOP Instance UID
+  (fffe,e00d)
+(fffe,e0dd)
+(0008,1155) UI [2.25.191895961802126393274763109415032859521]         # 44,1 Referenced SOP Instance UID
+(0009,0010) LO [GEMS_IDEN_01]                                     # 12,1 Private Creator
+(0009,1002) SH [MR]                                               # 2,1 Suite id
+(0009,1004) SH [SIGNA ]                                           # 6,1 Product id
+(0009,1027) SL 1352726590                                         # 4,1 Image actual date
+(0009,1030) SH [GEHC]                                             # 4,1 Service id
+(0009,1031) SH [9999]                                             # 4,1 Mobile location number
+(0009,10e3) UI [1.2.840.113619.1.283.5.6945.2378688]              # 36,1 Equipment UID
+(0009,10e9) SL 1352726590                                         # 4,1 Actual series data time stamp
+(0010,0010) PN [BAR]                                           # 6,1 Patient's Name
+(0010,0020) LO [BAR-01-MR00]                                   # 14,1 Patient ID
+(0010,4000) LT [Project: FOO_DF; Subject: BAR; Session: BAR-01-MR00 ]         # 60,1 Patient Comments
+(0012,0063) LO [FOO common deidentification v001]               # 34,1-n De-identification Method
+(0012,0064) SQ (Sequence with undefined length)                   # u/l,1 De-identification Method Code Sequence
+  (fffe,e000) na (Item with undefined length)
+    (0008,0100) SH [262161]                                       # 6,1 Code Value
+    (0008,0102) SH [XNAT]                                         # 4,1 Coding Scheme Designator
+    (0008,0103) SH [0.1 ]                                         # 4,1 Coding Scheme Version
+    (0008,0104) LO [XNAT Edit Script]                             # 16,1 Code Meaning
+  (fffe,e00d)
+(fffe,e0dd)
+(0018,0020) CS [GR]                                               # 2,1-n Scanning Sequence
+(0018,0021) CS [SS]                                               # 2,1-n Sequence Variant
+(0018,0022) CS [NONE]                                             # 4,1-n Scan Options
+(0018,0023) CS [2D]                                               # 2,1 MR Acquisition Type
+(0018,0025) CS [N ]                                               # 2,1 Angio Flag
+(0018,0050) DS [3 ]                                               # 2,1 Slice Thickness
+(0018,0080) DS [684 ]                                             # 4,1 Repetition Time
+(0018,0081) DS [7.5 ]                                             # 4,1 Echo Time
+(0018,0082) DS [0 ]                                               # 2,1 Inversion Time
+(0018,0083) DS [1 ]                                               # 2,1 Number of Averages
+(0018,0084) DS [127.801284]                                       # 10,1 Imaging Frequency
+(0018,0085) SH [1H]                                               # 2,1 Imaged Nucleus
+(0018,0086) IS [2 ]                                               # 2,1-n Echo Number(s)
+(0018,0087) DS [3 ]                                               # 2,1 Magnetic Field Strength
+(0018,0088) DS [3 ]                                               # 2,1 Spacing Between Slices
+(0018,0091) IS [1 ]                                               # 2,1 Echo Train Length
+(0018,0093) DS [100 ]                                             # 4,1 Percent Sampling
+(0018,0094) DS [75]                                               # 2,1 Percent Phase Field of View
+(0018,0095) DS [244.141 ]                                         # 8,1 Pixel Bandwidth
+(0018,1020) LO [23\LX\MR Software release:DV22.0_V02_1122.a ]         # 44,1-n Software Version(s)
+(0018,1030) LO [FOO_fieldmap]                                   # 14,1 Protocol Name
+(0018,1088) IS [351 ]                                             # 4,1 Heart Rate
+(0018,1090) IS [0 ]                                               # 2,1 Cardiac Number of Images
+(0018,1094) IS [0 ]                                               # 2,1 Trigger Window
+(0018,1100) DS [340 ]                                             # 4,1 Reconstruction Diameter
+(0018,1250) SH [32Ch Head ]                                       # 10,1 Receive Coil Name
+(0018,1310) US 128\0\0\128                                        # 8,4 Acquisition Matrix
+(0018,1312) CS [COL ]                                             # 4,1 In-plane Phase Encoding Direction
+(0018,1314) DS [60]                                               # 2,1 Flip Angle
+(0018,1315) CS [N ]                                               # 2,1 Variable Flip Angle Flag
+(0018,1316) DS [0.176102]                                         # 8,1 SAR
+(0018,5100) CS [HFS ]                                             # 4,1 Patient Position
+(0019,0010) LO [GEMS_ACQU_01]                                     # 12,1 Private Creator
+(0019,100f) DS [332.799988]                                       # 10,1 Horiz. Frame of ref.
+(0019,1011) SS 0                                                  # 2,1 Series contrast
+(0019,1012) SS 4                                                  # 2,1 Last pseq
+(0019,1017) SS 2                                                  # 2,1 Series plane
+(0019,1018) LO [S ]                                               # 2,1 First scan ras
+(0019,1019) DS [61.3122 ]                                         # 8,1 First scan location
+(0019,101a) LO [I ]                                               # 2,1 Last scan ras
+(0019,101b) DS [-85.6878]                                         # 8,1 Last scan loc
+(0019,101e) DS [255.000000]                                       # 10,1 Display field of view
+(0019,105a) FL 1.39636e+08                                        # 4,1 Acquisition Duration
+(0019,107d) DS [7500]                                             # 4,1 Second echo
+(0019,107e) SS 2                                                  # 2,1 Number of echoes
+(0019,107f) DS [0.000000]                                         # 8,1 Table delta
+(0019,1081) SS 0                                                  # 2,1 Contiguous
+(0019,1084) DS [0.352204]                                         # 8,1 Peak SAR
+(0019,1087) DS [0.000000]                                         # 8,1 Cardiac repetition time
+(0019,1088) SS 0                                                  # 2,1 Images per cardiac cycle
+(0019,108a) SS 12                                                 # 2,1 Actual receive gain analog
+(0019,108b) SS 14                                                 # 2,1 Actual receive gain digital
+(0019,108d) DS [0 ]                                               # 2,1 Delay after trigger
+(0019,108f) SS 1                                                  # 2,1 Swappf
+(0019,1090) SS 0                                                  # 2,1 Pause Interval
+(0019,1091) DS [0.000000]                                         # 8,1 Pause Time
+(0019,1092) SL 0                                                  # 4,1 Slice offset on freq axis
+(0019,1093) DS [1278012840]                                       # 10,1 Auto Prescan Center Frequency
+(0019,1094) SS 133                                                # 2,1 Auto Prescan Transmit Gain
+(0019,1095) SS 12                                                 # 2,1 Auto Prescan Analog receiver gain
+(0019,1096) SS 14                                                 # 2,1 Auto Prescan Digital receiver gain
+(0019,1097) SL 0                                                  # 4,1 Bitmap defining CVs
+(0019,109b) SS 1                                                  # 2,1 Pulse Sequence Mode
+(0019,109c) LO [2dfast]                                           # 6,1 Pulse Sequence Name
+(0019,109d) DT [20110603183656]                                   # 14,1 Pulse Sequence Date
+(0019,109e) LO [2DFAST]                                           # 6,1 Internal Pulse Sequence Name
+(0019,109f) SS 3                                                  # 2,1 Transmitting Coil Type
+(0019,10a0) SS 0                                                  # 2,1 Surface Coil Type
+(0019,10a1) SS 0                                                  # 2,1 Extremity Coil flag
+(0019,10a2) SL 26653                                              # 4,1 Raw data run number
+(0019,10a3) UL 0                                                  # 4,1 Calibrated Field strength
+(0019,10a4) SS 0                                                  # 2,1 SAT fat/water/bone
+(0019,10a7) DS [0.000000]                                         # 8,1 User data 0
+(0019,10a8) DS [0.000000]                                         # 8,1 User data 1
+(0019,10a9) DS [0.000000]                                         # 8,1 User data 2
+(0019,10aa) DS [0.000000]                                         # 8,1 User data 3
+(0019,10ab) DS [0.000000]                                         # 8,1 User data 4
+(0019,10ac) DS [0.000000]                                         # 8,1 User data 5
+(0019,10ad) DS [0.000000]                                         # 8,1 User data 6
+(0019,10ae) DS [0.000000]                                         # 8,1 User data 7
+(0019,10af) DS [0.000000]                                         # 8,1 User data 8
+(0019,10b0) DS [0.000000]                                         # 8,1 User data 9
+(0019,10b1) DS [0.000000]                                         # 8,1 User data 10
+(0019,10b2) DS [0.000000]                                         # 8,1 User data 11
+(0019,10b3) DS [0.000000]                                         # 8,1 User data 12
+(0019,10b4) DS [0.000000]                                         # 8,1 User data 13
+(0019,10b5) DS [0.000000]                                         # 8,1 User data 14
+(0019,10b6) DS [0.000000]                                         # 8,1 User data 15
+(0019,10b7) DS [0.000000]                                         # 8,1 User data 16
+(0019,10b8) DS [0.000000]                                         # 8,1 User data 17
+(0019,10b9) DS [0.000000]                                         # 8,1 User data 18
+(0019,10ba) DS [0.000000]                                         # 8,1 User data 19
+(0019,10bb) DS [0.000000]                                         # 8,1 User data 20 (?Diffusion Direction X?)
+(0019,10bc) DS [0.000000]                                         # 8,1 User data 21 (?Diffusion Direction Y?)
+(0019,10bd) DS [0.000000]                                         # 8,1 User data 22 (?Diffusion Direction Z?)
+(0019,10be) DS [0.000000]                                         # 8,1 Projection angle
+(0019,10c0) SS 0                                                  # 2,1 Saturation planes
+(0019,10c2) SS 9990                                               # 2,1 SAT location R
+(0019,10c3) SS 9990                                               # 2,1 SAT location L
+(0019,10c4) SS 9990                                               # 2,1 SAT location A
+(0019,10c5) SS 9990                                               # 2,1 SAT location P
+(0019,10c6) SS 9990                                               # 2,1 SAT location H
+(0019,10c7) SS 9990                                               # 2,1 SAT location F
+(0019,10c8) SS 0                                                  # 2,1 SAT thickness R/L
+(0019,10c9) SS 0                                                  # 2,1 SAT thickness A/P
+(0019,10ca) SS 0                                                  # 2,1 SAT thickness H/F
+(0019,10cb) SS 0                                                  # 2,1 Phase Contrast flow axis
+(0019,10cc) SS 0                                                  # 2,1 Velocity encoding
+(0019,10cd) SS 0                                                  # 2,1 Thickness disclaimer
+(0019,10ce) SS 2                                                  # 2,1 Prescan type
+(0019,10cf) SS 16                                                 # 2,1 Prescan status
+(0019,10d2) SS 0                                                  # 2,1 Projection Algorithm
+(0019,10d3) SH (no value)                                         # 0,1 Projection Algorithm Name
+(0019,10d5) SS 0                                                  # 2,1 Fractional echo
+(0019,10d7) SS 0                                                  # 2,1 Cardiac phase number
+(0019,10d8) SS 1                                                  # 2,1 Variable echoflag
+(0019,10d9) DS [0.000000]                                         # 8,1 Concatenated SAT {# DTI Diffusion Dir., release 9.0 & below}
+(0019,10df) DS [0.000000]                                         # 8,1 User data 23 {# DTI Diffusion Dir., release 9.0 & below}
+(0019,10e0) DS [0.000000]                                         # 8,1 User data 24 {# DTI Diffusion Dir., release 10.0 & above}
+(0019,10e2) DS [0.000000]                                         # 8,1 Velocity Encode Scale
+(0019,10f2) SS 0                                                  # 2,1 Fast phases
+(0019,10f9) DS [133 ]                                             # 4,1 Transmit gain
+(0020,000d) UI [2.25.5382805236702548445559268862254470024]         # 42,1 Study Instance UID
+(0020,000e) UI [2.25.227800148759375780372378393217159409291]         # 44,1 Series Instance UID
+(0020,0010) SH [BAR-01-MR00]                                   # 14,1 Study ID
+(0020,0011) IS [6 ]                                               # 2,1 Series Number
+(0020,0012) IS [1 ]                                               # 2,1 Acquisition Number
+(0020,0013) IS [60]                                               # 2,1 Instance Number
+(0020,0032) DS [-170.742\-182.929\-25.6878]                       # 26,3 Image Position (Patient)
+(0020,0037) DS [1\-0\0\-0\1\0 ]                                   # 14,6 Image Orientation (Patient)
+(0020,0052) UI [1.2.840.113619.2.283.6945.2378688.25002.1352727098.636]         # 54,1 Frame of Reference UID
+(0020,0060) CS (no value)                                         # 0,1 Laterality
+(0020,1002) IS [100 ]                                             # 4,1 Images in Acquisition
+(0020,1040) LO (no value)                                         # 0,1 Position Reference Indicator
+(0020,1041) DS [-25.68775177]                                     # 12,1 Slice Location
+(0020,9056) SH [1 ]                                               # 2,1 Stack ID
+(0020,9057) UL 30                                                 # 4,1 In-Stack Position Number
+(0021,0010) LO [GEMS_RELA_01]                                     # 12,1 Private Creator
+(0021,1035) SS 1                                                  # 2,1 Series from which prescribed
+(0021,1036) SS 8                                                  # 2,1 Image from which prescribed
+(0021,1037) SS 16                                                 # 2,1 Screen Format
+(0021,104f) SS 50                                                 # 2,1 Locations in acquisition
+(0021,1050) SS 0                                                  # 2,1 Graphically prescribed
+(0021,1051) DS [0.000000]                                         # 8,1 Rotation from source x rot
+(0021,1052) DS [0.000000]                                         # 8,1 Rotation from source y rot
+(0021,1053) DS [0.000000]                                         # 8,1 Rotation from source z rot
+(0021,1056) SL 0                                                  # 4,1 Num 3D slabs
+(0021,1057) SL 0                                                  # 4,1 Locs per 3D slab
+(0021,1058) SL 0                                                  # 4,1 Overlaps
+(0021,1059) SL 0                                                  # 4,1 Image Filtering 0.5/0.2T
+(0021,105a) SL 0                                                  # 4,1 Diffusion direction
+(0021,105b) DS [0.000000]                                         # 8,1 Tagging Flip Angle
+(0021,105c) DS [0.000000]                                         # 8,1 Tagging Orientation
+(0021,105d) DS [0.000000]                                         # 8,1 Tag Spacing
+(0021,105e) DS [0.000000]                                         # 8,1 RTIA_timer
+(0021,105f) DS [0.000000]                                         # 8,1 Fps
+(0021,1081) DS [0 ]                                               # 2,1 Auto window/level alpha
+(0021,1082) DS [0 ]                                               # 2,1 Auto window/level beta
+(0021,1083) DS [0 ]                                               # 2,1 Auto window/level window
+(0021,1084) DS [0 ]                                               # 2,1 Auto window/level level
+(0023,0010) LO [GEMS_STDY_01]                                     # 12,1 Private Creator
+(0023,1070) FD 0                                                  # 8,1 Start time(secs) in first axial
+(0023,1074) SL 0                                                  # 4,1 No. of updates to header
+(0023,107d) SS 0                                                  # 2,1 Indicates study has complete info (DICOM/genesis)
+(0023,1080) SQ (Sequence with undefined length)                   # u/l,1 Has MPPS related tags
+  (fffe,e000) na (Item with undefined length)
+    (0040,0255) LO (no value)                                     # 0,1 Performed Procedure Type Description
+  (fffe,e00d)
+(fffe,e0dd)
+(0025,0010) LO [GEMS_SERS_01]                                     # 12,1 Private Creator
+(0025,1006) SS 4                                                  # 2,1 Last pulse sequence used
+(0025,1007) SL 100                                                # 4,1 Images in Series
+(0025,1010) SL 0                                                  # 4,1 Landmark Counter
+(0025,1011) SS 2                                                  # 2,1 Number of Acquisitions
+(0025,1014) SL 0                                                  # 4,1 Indicates no. of updates to header
+(0025,1017) SL 0                                                  # 4,1 Series Complete Flag
+(0025,1018) SL 0                                                  # 4,1 Number of images archived
+(0025,1019) SL 100                                                # 4,1 Last image number used
+(0025,101a) SH [MR3T]                                             # 4,1 Primary Receiver Suite and Host
+(0025,101b) OB d2\02\00\00\1f\8b\08\08\8e\3e\a1\50\00\03\45\78\35\31\36\36\53\65\72\36\52\78\00\8d\54\4d\6f\a3\30\10\bd\f3\2b\2c\df\cb\06\08\49\7a\34\c6\21\56\00\bb\b6\21\c9\29\8a\da\ec\36\52\b7\a9\da\74\7f         # 726,1 Protocol Data Block (compressed)
+(0027,0010) LO [GEMS_IMAG_01]                                     # 12,1 Private Creator
+(0027,1006) SL 0                                                  # 4,1 Image archive flag
+(0027,1010) SS 0                                                  # 2,1 Scout Type
+(0027,1030) SH (no value)                                         # 0,1 Foreign Image Revision
+(0027,1031) SS 1                                                  # 2,1 Imaging Mode
+(0027,1032) SS 4                                                  # 2,1 Pulse Sequence
+(0027,1033) UL (SL) 0                                             # 4,1 Imaging Options
+(0027,1035) SS 2                                                  # 2,1 Plane Type
+(0027,1040) SH [I ]                                               # 2,1 RAS letter of image location
+(0027,1041) FL -25.6878                                           # 4,1 Image location
+(0027,1060) FL 128                                                # 4,1 Image dimension - X
+(0027,1061) FL 128                                                # 4,1 Image dimension - Y
+(0027,1062) FL 1                                                  # 4,1 Number of Excitations
+(0028,0002) US 1                                                  # 2,1 Samples per Pixel
+(0028,0004) CS [MONOCHROME2 ]                                     # 12,1 Photometric Interpretation
+(0028,0010) US 256                                                # 2,1 Rows
+(0028,0011) US 256                                                # 2,1 Columns
+(0028,0030) DS [1.3281\1.3281 ]                                   # 14,2 Pixel Spacing
+(0028,0100) US 16                                                 # 2,1 Bits Allocated
+(0028,0101) US 16                                                 # 2,1 Bits Stored
+(0028,0102) US 15                                                 # 2,1 High Bit
+(0028,0103) US 1                                                  # 2,1 Pixel Representation
+(0028,0106) SS 0                                                  # 2,1 Smallest Image Pixel Value
+(0028,0107) SS 7305                                               # 2,1 Largest Image Pixel Value
+(0028,1050) DS [3652]                                             # 4,1-n Window Center
+(0028,1051) DS [7305]                                             # 4,1-n Window Width
+(0029,0010) LO [GEMS_IMPS_01]                                     # 12,1 Private Creator
+(0029,1015) SL 0                                                  # 4,1 Lower range of Pixels1
+(0029,1016) SL 0                                                  # 4,1 Upper range of Pixels1
+(0029,1017) SL 0                                                  # 4,1 Lower range of Pixels2
+(0029,1018) SL 0                                                  # 4,1 Upper range of Pixels2
+(0029,1026) SS 2                                                  # 2,1 Version of the hdr struct
+(0029,1034) SL 16384                                              # 4,1 Advantage comp. Overflow
+(0029,1035) SL 0                                                  # 4,1 Advantage comp. Underflow
+(0040,0242) SH [MR3T]                                             # 4,1 Performed Station Name
+(0040,0243) SH [MR]                                               # 2,1 Performed Location
+(0040,0244) DA [20121112]                                         # 8,1 Performed Procedure Step Start Date
+(0040,0245) TM [125257]                                           # 6,1 Performed Procedure Step Start Time
+(0043,0010) LO [GEMS_PARM_01]                                     # 12,1 Private Creator
+(0043,1001) SS 4                                                  # 2,1 Bitmap of prescan options
+(0043,1002) SS 0                                                  # 2,1 Gradient offset in X
+(0043,1003) SS 6                                                  # 2,1 Gradient offset in Y
+(0043,1004) SS -26                                                # 2,1 Gradient offset in Z
+(0043,1006) SS 0                                                  # 2,1 Number of EPI shots
+(0043,1007) SS 0                                                  # 2,1 Views per segment
+(0043,1008) SS 0                                                  # 2,1 Respiratory rate, bpm
+(0043,1009) SS 0                                                  # 2,1 Respiratory trigger point
+(0043,100a) SS 1                                                  # 2,1 Type of receiver used
+(0043,100b) DS [0.000000]                                         # 8,1 DB/dt Peak rate of change of gradient field
+(0043,100c) DS [100.000000]                                       # 10,1 dB/dt Limits in units of percent
+(0043,100d) DS [0.000000]                                         # 8,1 PSD estimated limit
+(0043,100e) DS [0.000000]                                         # 8,1 PSD estimated limit in tesla per second
+(0043,1010) US 0                                                  # 2,1 Window value
+(0043,101c) SS 0                                                  # 2,1 GE image integrity
+(0043,101d) SS 0                                                  # 2,1 Level value
+(0043,1028) OB 4d\52\20\52\65\63\6f\6e\20\3c\30\3e\00\2f\35\31\36\36\2f\36\2f\31\00\00\e3\c2\62\00\00\00\00\00\e8\f2\c2\02\00\00\00\00\58\9d\6a\50\b1\7f\00\00\e0\32\df\02\00\00\00\00\00\00\00\00\01\00\00\00         # 80,1 Unique image iden
+(0043,1029) OB 01\00\00\00\93\04\89\44\1d\02\00\00\89\1c\00\00\00\00\fe\03\34\48\4b\01\80\01\0b\04\ec\12\94\1c\b5\16\69\0d\93\07\8c\04\21\03\67\02\e8\01\a9\01\53\01\69\01\2c\01\e7\00\e3\00\de\00\b6\00\99\00         # 2068,1 Histogram tables
+(0043,102a) OB 00\00\41\55\2c\00\00\00\00\00\02\00\2c\00\00\00\dc\05\00\00\00\00\01\00\08\06\00\00\00\10\00\00\00\00\03\00\08\16\00\00\08\00\00\00\00\00\00\00\0c\00\00\00\0e\00\00\00\85\00\00\00\a8\ed\2c\4c         # 5648,1 User defined data
+(0043,102c) SS 0                                                  # 2,1 Effective echo spacing
+(0043,102d) SH (no value)                                         # 0,1 Filter Mode (String slop field 1 in legacy GE MR
+(0043,102e) SH (no value)                                         # 0,1 String slop field 2
+(0043,102f) SS 0                                                  # 2,1 Image Type (real, imaginary, phase, magnitude)
+(0043,1030) SS 0                                                  # 2,1 Vas collapse flag
+(0043,1032) SS 2                                                  # 2,1 Vas flags
+(0043,1033) FL 0                                                  # 4,1 Neg_scanspacing
+(0043,1034) IS [0 ]                                               # 2,1 Offset Frequency
+(0043,1035) UL 0                                                  # 4,1 User_usage_tag
+(0043,1036) UL 0                                                  # 4,1 User_fill_map_MSW
+(0043,1037) UL 0                                                  # 4,1 User_fill_map_LSW
+(0043,1038) FL 0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0         # 96,24 User data 25...User data 48 {User48=Effective Resolution for spiral}
+(0043,1039) IS [0\0\0\0 ]                                         # 8,4 Slop_int_6... slop_int_9 (B_value/?/?/?)
+(0043,1060) IS [0\0\0\0\0\0\0\0 ]                                 # 16,8 Slop_int_10...slop_int_17
+(0043,1061) UI [1.2.840.113619.6.283.4.1917728652.399.1352742774.172]         # 52,1 Scanner Study Entity UID
+(0043,1062) SH [5166]                                             # 4,1 Scanner Study ID
+(0043,106f) DS [0\0\0\0 ]                                         # 8,3-4 Scanner Table Entry (single gradient coil systems only)/Scanner Table Entry + Gradient Coil Selected
+(0043,107d) US 0                                                  # 2,1 Recon mode flag word
+(0043,1080) LO (no value)                                         # 0,1-n Coil ID Data
+(0043,1081) LO [C-GE_32Ch Head]                                   # 14,1 GE Coil Name
+(0043,1082) LO [SRMode=200\GCoilType=8\gradientAmp=8920\lineFreq=60\RFampType=15\broadBandXcvr=yes\DerateGrad=Yes ]         # 98,1-n System Configuration Information
+(0043,1083) DS [0.5\1 ]                                           # 6,1-2 Asset R Factors
+(0043,1084) LO [10000\0\-1\0\ \NO\]                               # 18,1-n Additional Asset Data
+(0043,1088) UI [1.2.840.113619.2.283.6945.2378688.25002.1352727098.637]         # 54,1 PURE Acquisition Calibration Series UID
+(0043,1089) LO [FDA\IEC_FIRST_LEVEL\IEC_FIRST_LEVEL ]             # 36,3 Governing Body, dB/dt, and SAR definition
+(0043,108a) CS [COL ]                                             # 4,1 Private In-Plane Phase Encoding Direction
+(0043,1090) LO [WHOLE_BODY_6_MIN\LOCAL_PEAK_6_MIN\PARTIAL_BODY_6MIN ]         # 52,1-n SAR Definition
+(0043,1091) DS [0.1761\0.352204\0.176102]                         # 24,1-n SAR value
+(0043,1095) LO [TG/s1,CF/s5,AS/s5 ]                               # 18,1 Prescan Reuse String
+(0043,1096) CS [RESEARCH]                                         # 8,1 Content Qualification
+(0043,1097) LO [2\1\1.5 0.2 0.2 2.0 64 0.4 1.05\1.5 0.2 0.2 2.0 64 0.4 1.05\1.5 0.2 0.2 2.0 64 0.4 1.05\100\0\0\rev=1;a=75;b=2;c=32;d=8;e=3;f=2;g=1;h=0 ]         # 136,1-n Image Filtering Parameters
+(0043,109a) IS [1 ]                                               # 2,1 Rx Stack Identification
+(7fe0,0010) OW 00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00         # 131072,1 Pixel Data
